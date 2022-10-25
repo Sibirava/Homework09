@@ -5,9 +5,15 @@
 
 def check_digit_up(num):
     while num > 0:
-        digit = num % 10
+        if num % 10 <= ((num // 10) % 10):
+            return False
+        else:
+            return True
 
-        if digit <= ((num // 100) % 10):
+
+def check_digit_down(num):
+    while num > 10:
+        if num % 10 >= ((num // 10) % 10):
             return False
         else:
             return True
@@ -15,9 +21,13 @@ def check_digit_up(num):
 def main():
     num = int(input("Please input your number: "))
 
-    result = check_digit_up(num)
+    if check_digit_up(num):
+        msg = f"All digits of the number UP"
+    elif check_digit_down(num):
+        msg = f"All digits of the number DOWN"
+    else:
+        msg = f"Digits of number don't make any subsequence"
 
-    print(result)
-
+    print(msg)
 
 main()
