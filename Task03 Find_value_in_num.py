@@ -11,8 +11,6 @@ def find_digit(number, value):
         number = number // 10
         if digit == value:
             count += 1
-        else:
-            continue
     return count
 
 def main():
@@ -21,9 +19,9 @@ def main():
     count = find_digit(number, value)
 
     if 0 <= value <= 9:
-        print(count)
+        msg = f" {count} times number {value} occur in {number}"
     else:
-        print("Wrong value")
+        msg = f"Wrong value"
 
-
+    print(msg)
 main()

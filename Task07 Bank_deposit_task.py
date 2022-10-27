@@ -3,15 +3,18 @@
 # Created by Katiaryna Sibirava
 # QA4822 group
 
+
+START_DEPOSIT = 1000
+FINAL_DEPOSIT = 2000
 def count_month(percent):
     count = 1
-    deposit = 1000
+    deposit = START_DEPOSIT
 
-    while deposit <= 2000:
+    while deposit <= FINAL_DEPOSIT:
         deposit = round((deposit + (deposit * percent) / 100), 2)
         count += 1
     return (count, deposit)
-
+ 
 def main():
 
     percent = int(input("Please enter percentage: "))

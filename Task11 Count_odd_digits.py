@@ -10,8 +10,6 @@ def count_odd_digit(number):
         number = number // 10
         if digit % 2 == 1:
             count += 1
-        else:
-            count += 0
     return count
 
 
