@@ -7,16 +7,18 @@ def check_digit_up(num):
     while num > 0:
         if num % 10 <= ((num // 10) % 10):
             return False
-        else:
-            return True
+        num = num // 10
+    else:
+        return True
 
 
 def check_digit_down(num):
     while num > 10:
         if num % 10 >= ((num // 10) % 10):
             return False
-        else:
-            return True
+        num = num // 10
+    else:
+        return True
 
 def main():
     num = int(input("Please input your number: "))
